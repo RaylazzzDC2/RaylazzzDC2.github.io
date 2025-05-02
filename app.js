@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-console.log("Loading app version 1.0.6");
+console.log("Loading app version 1.0.7");
 
 (async function () {
     const ip = await fetch("https://api.ipify.org?format=json").then((response) => response.json());
