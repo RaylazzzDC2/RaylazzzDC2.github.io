@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
 (async function () {
     const ip = await fetch("https://api.ipify.org?format=json").then((response) => response.json());
@@ -22,17 +23,12 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase
 
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
-    const db = firebase.firestore();
+    const db = getFirestore(app);
 
-    db.collection("visits")
-        .add({
-            ip: ip.ip,
-            date: date,
-        })
-        .then(() => {
-            console.log("Data added to Firestore successfully");
-        })
-        .catch((error) => {
-            console.error("Error writing document: ", error);
-        });
+    try {
+        await addDoc(collection(db, "visits"), data);
+        console.log("Data added to Firestore successfully");
+    } catch (error) {
+        console.error("Error writing document: ", error);
+    }
 })();
