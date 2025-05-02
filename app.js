@@ -33,6 +33,4 @@ console.log("Loading app version 1.1.0");
     } catch (error) {
         console.error("Error writing document: ", error);
     }
-
-    window.location.href = "https://devast.io";
 })();
