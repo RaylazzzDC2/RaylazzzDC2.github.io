@@ -1,3 +1,6 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
+
 (async function () {
     const ip = await fetch("https://api.ipify.org?format=json").then((response) => response.json());
 
@@ -7,27 +10,29 @@
         date: date,
     };
 
-    await fetch("https://raylazzzdc2.github.io/data.json")
-        .then((response) => response.json())
-        .then((json) => {
-            json.list.push(data);
+    const firebaseConfig = {
+        apiKey: "AIzaSyC1_IyV5vabwtaQbKD3Adls6vRfUZa1J6Y",
+        authDomain: "database-f6ede.firebaseapp.com",
+        projectId: "database-f6ede",
+        storageBucket: "database-f6ede.firebasestorage.app",
+        messagingSenderId: "946690310170",
+        appId: "1:946690310170:web:0146ec2ea7b3de911191a3",
+        measurementId: "G-1Q66ZD1RTB",
+    };
 
-            return fetch("./data.json", {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(json),
-            });
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = firebase.firestore();
+
+    db.collection("visits")
+        .add({
+            ip: ip.ip,
+            date: date,
         })
-        .then((response) => {
-            if (response.ok) {
-                console.log("Data added successfully");
-            } else {
-                console.error("Error adding data");
-            }
+        .then(() => {
+            console.log("Data added to Firestore successfully");
         })
         .catch((error) => {
-            console.error("Error:", error);
+            console.error("Error writing document: ", error);
         });
 })();
