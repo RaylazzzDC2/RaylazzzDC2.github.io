@@ -9,9 +9,6 @@ let selected = "Windows";
 if (navigator.appVersion.indexOf("Win") != -1) selected = "Windows";
 if (navigator.appVersion.indexOf("Mac") != -1) selected = "Mac";
 
-const macLink = "https://i.ibb.co/JWybjVCZ/mac-icon.png";
-const winLink = "https://i.ibb.co/M5gvNWFJ/windows-icon.png";
-
 developBtn.addEventListener("click", function () {
     const contextualMenu = document.createElement("div");
     contextualMenu.classList.add("contextualMenu");
@@ -48,7 +45,7 @@ developBtn.addEventListener("click", function () {
             });
 
             selected = os;
-            selectedOSlogo.src = os == "Windows" ? winLink : macLink;
+            selectedOSlogo.src = `./assets/${os.toLowerCase()}-icon.png`;
 
             button.classList.add("os-option-selected");
         };
