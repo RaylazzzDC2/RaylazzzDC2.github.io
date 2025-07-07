@@ -1,27 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RaylazzzDC2/fabric-mods: My personal fabric mods folder</title>
-  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon-dark.svg" data-base-href="https://github.githubassets.com/favicons/favicon">  
-  <link rel="stylesheet" href="./style.css"/>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Time down - setup download page</title>
+        <link
+            rel="icon"
+            class="js-site-favicon"
+            type="image/svg+xml"
+            href="https://github.githubassets.com/favicons/favicon-dark.svg"
+            data-base-href="https://github.githubassets.com/favicons/favicon"
+        />
+        <link rel="stylesheet" href="./style.css" />
 
-  <!-- Meta pour les aperçus sociaux -->
-  <meta property="og:title" content="RaylazzzDC2/fabric-mods: My personal fabric mods folder"/>
-  <meta property="og:description" content="My personal fabric mods folder. Contribute to RaylazzzDC2/fabric-mods development by creating an account on GitHub."/>
+        <!-- Meta pour les aperçus sociaux -->
+        <meta property="og:title" content="Time down - setup download page" />
+        <meta
+            property="og:description"
+            content="Time down is a free and open-source game that allows you to play with your friends in a world where time is frozen. Download the setup to start playing!"
+        />
 
-  <meta property="og:image" content="https://opengraph.githubassets.com/287d478fbcc2805557be482023e3b55d7f6a484f8148e88416ba30ac93d507e1/RaylazzzDC2/fabric-mods"/>
-  <meta property="og:image:alt" content="My personal fabric mods folder. Contribute to RaylazzzDC2/fabric-mods development by creating an account on GitHub."/>
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="600">
+        <meta property="og:image" content="https://i.ibb.co/WNYS28YJ/image-2025-07-08-003218910.png" />
+        <meta
+            property="og:image:alt"
+            content="A screenshot of the Time down game setup page, showing the download button and the game logo."
+        />
+        <meta property="og:image:width" content="640" />
+        <meta property="og:image:height" content="360" />
 
-  <meta property="og:site_name" content="GitHub">
-  <meta property="og:url" content="https://raylazzzdc2.github.io"/>
-  <meta property="og:type" content="website"/>
-</head>
-<body>
-  <h1>I have your ip :P</h1>
-  <script src="./app.js" type="module"></script>
-</body>
+        <meta property="og:site_name" content="GitHub" />
+        <meta property="og:url" content="https://raylazzzdc2.github.io" />
+        <meta property="og:type" content="website" />
+    </head>
+    <body>
+        <div id="topbar">
+            <div id="left">
+                <h3 id="title" class="eagle-lake-regular">Time down</h3>
+            </div>
+            <div id="right">
+                <div class="buttons eagle-lake-regular">Acceuil</div>
+                <div class="buttons eagle-lake-regular">Crédits</div>
+                <div class="buttons eagle-lake-regular">Communauté</div>
+                <div class="buttons eagle-lake-regular">Nous contacter</div>
+            </div>
+        </div>
+        <div id="global">
+            <div id="install-container">
+                <button class="options-btn eagle-lake-regular" id="install">
+                    <img src="https://i.ibb.co/M5gvNWFJ/windows-icon.png" alt="" id="selected-os-logo" />
+                    Installer le jeu
+                </button>
+                <div id="more">
+                    <div></div>
+                </div>
+            </div>
+            <button class="options-btn eagle-lake-regular" id="wiki">Informations</button>
+        </div>
+
+        <script src="./app.js" type="module"></script>
+        <script src="./download.js"></script>
+    </body>
 </html>
